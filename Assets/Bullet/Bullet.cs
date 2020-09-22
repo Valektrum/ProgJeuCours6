@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     Rigidbody myRigidBody;
-    public int lifeSpan = 3;
+    public int lifeSpan = 10;
     public int bulletSpeed = 1;
     public int bulletDamage = 1;
     private float timeLeftToLive;
@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour
     {
         myRigidBody = GetComponent<Rigidbody>();
         timeLeftToLive = lifeSpan;
+        Destroy(gameObject, lifeSpan);
     }
 
     void Update()
